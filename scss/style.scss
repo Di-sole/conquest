@@ -1,0 +1,369 @@
+// Файл обнуляющих стилей
+@import "_nullstyle";
+// Шрифты
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+// Переменные
+$font_2:'Playfair Display', serif;
+$font_3:'Prata', serif;
+// Шаблоны
+%line {
+	content: '';
+	position: absolute;
+	width: 50px;
+	height: 1px;
+	background: #8B8371;
+}
+%line_short {
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 1px;
+	background: #8B8371;
+}
+
+// Общие стили
+body{
+	font-family: 'Roboto', sans-serif;
+}
+.wrapper {
+	width: 1366px;
+	margin: 0 auto;
+}
+.container {
+	width: 1166px;
+	margin: 0 auto;
+	&_small {
+		width: 1040px;
+		margin: 0 auto;
+	}
+}
+
+// header
+.header {
+	&__flex {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 30px 0;
+	}
+}
+.navigation {
+	&__list {
+		li {
+			margin-right: 60px;
+		}
+	}
+}
+.list {
+	display: flex;
+	flex-direction: row;
+	& li:last-child {
+		margin-right: 0px;
+	}
+}
+.icons {
+	&__list {
+		li {
+			margin-right: 23px;
+		}
+	}
+}
+
+// 1_screen
+.primary {
+	overflow: hidden;
+	background-image: url('../img/backgrounds/main_Ellipse.png');
+	background-repeat: no-repeat;
+	background-size: 500px 735px;
+	background-position: center;
+	&__flex {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__content {
+		position: relative;
+		padding-left: 65px;
+		width: 40%;
+	}
+	&__title {
+		font-family: $font_2;
+		font-size: 45px;
+		line-height: 60px;
+		&:before {
+			position: absolute;
+			@extend %line;
+			top: 35px;
+			left: 0px;
+		}
+	}
+	&__subtitle {
+		margin-bottom: 40px;
+		font-family: $font_2;
+		font-size: 30px;
+		line-height: 40px;
+	}
+	&__text {
+		margin-bottom: 65px;
+		font-weight: 300;
+		line-height: 22px;
+	}
+	&__button {
+		background-color: #444240;
+	}
+	&__watch {
+		width: 60%;
+	}
+}
+.section {
+	&__primary {
+		margin-bottom: 80px;
+	}
+	&__popular {
+		margin-bottom: 85px;
+	}
+	&__catalog {
+		margin-bottom: 80px;
+	}
+	&__socials {
+		margin-bottom: 90px;
+	}
+}
+.button {
+	padding: 27px 38px;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #fff;
+}
+.watch {
+	&__name {
+		font-family: $font_2;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+	&__price {
+		position: relative;
+		font-family: $font_3;
+		display: inline-block;
+		background: url('../img/icons/ruble.svg') top right no-repeat;
+		&_primary {
+			padding-right: 17px;
+			top: 145px;
+			left: 10px;
+			font-size: 16px;
+			&:after {
+				@extend %line;
+				top: 6px;
+				left: 90px;
+			}
+		}
+		&_popular {
+			padding-right: 14px;
+			font-size: 12px;
+			background-size: 7px 10px;
+		}
+	}
+	&__image {
+		&_popular {
+			margin-bottom: 20px;
+			background: url('../img/backgrounds/watch_Ellipse.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+	&__description {
+		position: relative;
+		font-size: 16px;
+		&_primary {
+			top: -160px;
+			left: 470px;
+			padding-left: 68px;
+			font-family: $font_3;
+			&:before {
+				@extend %line;
+				top: 7px;
+				left: 0px;
+			}
+		}
+		&_popular {
+			padding-left: 48px;
+			font-family: $font_2;
+			&:before {
+				@extend %line_short;
+				top: 9px;
+				left: 0px;
+			}
+		}
+	}
+	&__link {
+		font-family: $font_2;
+		font-size: 16px;
+	}
+}
+
+// 2_screen
+.popular {
+	&__flex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__title {
+		font-family: $font_2;
+		font-size: 32px;
+	}
+	&__link {
+		margin-bottom: 25px;
+		padding-bottom: 10px;
+		align-self: flex-end;
+		font-size: 16px;
+		font-weight: 500;
+		border-bottom: 1px solid #C4C0B6;
+	}
+	&__watches {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+	}
+	&__watch {
+		padding: 40px 20px 40px 40px;
+	}
+}
+
+// 3_screen
+.catalog {
+	position: relative;
+	padding: 50px 0;
+	overflow: hidden;
+	background-image: url('../img/backgrounds/background_banner_1.png'),
+		url('../img/backgrounds/Ellipse_banner_1.png'),
+		url('../img/backgrounds/Ellipse_banner_2.png');
+	background-repeat: no-repeat;
+	background-size: auto,
+		auto,
+		auto;
+	background-position: left,
+		right top, 
+		right bottom;
+	&__flex {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	&__preview {
+		width: 50%;
+		margin-right: 70px;
+	}
+	&__banner {
+		margin-bottom: 20px;
+	}
+	&__pagination {
+		margin-left: 370px;
+	}
+	&__description {
+		width: 45%;
+	}
+	&__title {
+		margin-bottom: 38px;
+		font-family: $font_2;
+		font-size: 32px;
+	}
+	&__text {
+		margin-bottom: 45px;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	&__button {
+		background-color: #D4B098;
+	}
+}
+.pagination {
+	font-family: $font_3;
+	font-size: 12px;
+	&__arrow {
+		font-size: 18px;
+		&_left {margin-right: 20px;}
+		&_right {margin-left: 20px;}
+	}
+}
+
+// 4_screen
+.socials {
+	&__flex {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__content {
+		width: 50%;
+	}
+	&__title {
+		margin-bottom: 40px;
+		font-family: $font_2;
+		font-size: 32px;
+	}
+	&__text {
+		margin-bottom: 120px;
+		font-size: 16px;
+		line-height: 27px;
+		& span {
+			font-weight: 700;
+		}
+	}
+	&__list {
+		li {
+			margin-right: 18px;
+		}
+	}
+	&__photo {
+		width: 630px;
+		display: flex;
+		flex-direction: row;
+		&_column {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin-right: 10px;
+		}
+	}
+}
+
+// footer
+.footer {
+	padding-top: 80px;
+	padding-bottom: 70px;
+	font-size: 12px;
+	color: #fff;
+	background-color: #444240;
+	&__flex {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		& li:last-child {
+			margin: 0;
+		}
+	}
+	&__logo {
+		margin-top: -17px;
+		margin-bottom: 33px;
+	}
+	&__list {
+		&_title {
+			margin-bottom: 33px;
+			font-size: 14px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		&_item {
+			margin-bottom: 15px;
+		}
+	}
+}
